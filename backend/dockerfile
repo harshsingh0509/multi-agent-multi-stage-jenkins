@@ -1,0 +1,7 @@
+FROM maven:3.8.1-adoptopenjdk-11
+WORKDIR /app
+COPY pom.xml ./
+COPY src ./src
+RUN mvn clean install
+CMD ["java", "-jar", "target/your-backend.jar"]
+EXPOSE 5000
